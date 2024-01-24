@@ -1,0 +1,39 @@
+
+spring:
+  datasource:
+    name: file-upload-back
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: chen1213
+    url: jdbc:mysql://localhost:3306/yh_oa?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useSSL=true
+
+
+# 1.2 upload file
+# 1.2.1 Maximum size of single file 2000MB
+  servlet:
+    multipart:
+      max-file-size: 2000MB
+  # 1.2.2 Total upload file size 4GB
+      max-request-size: 4GB
+  # 1.3 session max inactive interval, 86400 = one day
+  session:
+    timeout: 86400
+
+server:
+  port: 8094
+
+
+#mybatis-plus:
+#  global-config:
+#    db-config:
+#      id-type: auto
+#      field-strategy: not_empty
+#      column-underline: true
+#      logic-delete-value: 0
+#      logic-not-delete-value: 1
+#      db-type: mysql
+#    refresh: false
+#  configuration:
+#    map-underscore-to-camel-case: true
+#    cache-enabled: false
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
